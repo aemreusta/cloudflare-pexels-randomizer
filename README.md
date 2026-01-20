@@ -5,9 +5,10 @@ A serverless Cloudflare Worker that serves random images from a specific Pexels 
 <div align="center">
   <img
     src="https://cloudflare-pexels-randomizer.a-emreusta061.workers.dev"
-    alt="Random Banner"
-    width="800"
-    style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1); border: 2px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease;"
+    width="100%"
+    height="300"
+    style="border-radius: 20px; box-shadow: 0px 5px 15px rgba(0,0,0,0.5); object-fit: cover;"
+    alt="Pexels Collections"
   />
 </div>
 
