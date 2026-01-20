@@ -6,8 +6,8 @@ A serverless Cloudflare Worker that serves random images from a specific Pexels 
   <a href="https://www.pexels.com/@aemreusta/">
     <img
       src="https://cloudflare-pexels-randomizer.a-emreusta061.workers.dev"
-      width="100%"
       height="300"
+      width="900"
       alt="Dynamic Banner via Cloudflare Workers"
     />
   </a>
