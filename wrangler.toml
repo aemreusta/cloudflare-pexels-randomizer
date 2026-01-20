@@ -8,3 +8,11 @@ compatibility_date = "2025-01-21"
 # Bu değer public olabilir, sorun yok. Ancak API Key gizli kalmalı.
 # Varsayılan bir koleksiyon ID'si bırakabiliriz veya boş bırakabiliriz.
 DEFAULT_COLLECTION_ID = "983745"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+invocation_logs = true
