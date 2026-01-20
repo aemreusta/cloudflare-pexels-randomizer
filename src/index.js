@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env, _ctx) {
     // 1. CORS Headers (Bunu herhangi bir web sitesinde kullanabilmek için)
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
@@ -52,11 +52,11 @@ export default {
 
       // 4. Rastgele Seçim ve Yönlendirme
       const randomMedia = data.media[Math.floor(Math.random() * data.media.length)];
-      
+
       // Resim kalitesini seçelim (landscape genelde banner için iyidir)
       const imageUrl = randomMedia.src.landscape || randomMedia.src.large2x || randomMedia.src.original;
 
-      // 302 Found ile yönlendiriyoruz. 
+      // 302 Found ile yönlendiriyoruz.
       // Cache-Control: no-cache diyerek GitHub'ın her seferinde yeni istek atmasını sağlıyoruz.
       return new Response(null, {
         status: 302,
