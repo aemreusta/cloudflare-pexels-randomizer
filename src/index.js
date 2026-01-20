@@ -18,11 +18,18 @@ function getCorsHeaders() {
   };
 }
 
-// En iyi resim boyutunu seçer: 1200px genişlik, crop YOK
-// GitHub banner'ları için en iyi yöntem budur.
+// En iyi resim boyutunu seçer
 function pickImageUrl(media) {
-  if (!media?.id) return null;
-  return `https://images.pexels.com/photos/${media.id}/pexels-photo-${media.id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
+  const src = media?.src || {};
+
+  // ÖNCELİK DEĞİŞTİRİLDİ: Artık ilk olarak 'large' aranıyor.
+  return (
+    src.large ||      // <--- İstediğin boyut (Genelde 1920px genişlik)
+    src.large2x ||    // <--- Eğer large yoksa daha yüksek çözünürlük
+    src.landscape ||  // <--- O da yoksa yatay kırpılmış
+    src.original ||   // <--- Hiçbiri yoksa orijinal
+    null
+  );
 }
 
 // Koleksiyonu çeken ve KV'ye kaydeden ana fonksiyon
