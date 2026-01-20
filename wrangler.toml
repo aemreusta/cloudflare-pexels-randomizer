@@ -6,8 +6,8 @@ compatibility_date = "2025-01-21"
 # Local testler için .dev.vars dosyası kullanılır ama repoya atılmaz.
 [vars]
 # Bu değer public olabilir, sorun yok. Ancak API Key gizli kalmalı.
-# Varsayılan bir koleksiyon ID'si bırakabiliriz veya boş bırakabiliriz.
-DEFAULT_COLLECTION_ID = "983745"
+# https://www.pexels.com/collections/albania-3j1q9fg/
+DEFAULT_COLLECTION_ID = "3j1q9fg"
 
 [observability]
 enabled = true
