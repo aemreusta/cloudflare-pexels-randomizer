@@ -2,13 +2,6 @@ name = "cloudflare-pexels-randomizer"
 main = "src/index.js"
 compatibility_date = "2025-01-21"
 
-# Cloudflare Dashboard'dan bu değişkenleri tanımlayacağız.
-# Local testler için .dev.vars dosyası kullanılır ama repoya atılmaz.
-[vars]
-# Bu değer public olabilir, sorun yok. Ancak API Key gizli kalmalı.
-# https://www.pexels.com/collections/albania-3j1q9fg/
-DEFAULT_COLLECTION_ID = "3j1q9fg"
-
 [observability]
 enabled = true
 head_sampling_rate = 1
@@ -16,3 +9,14 @@ head_sampling_rate = 1
 [observability.logs]
 enabled = true
 invocation_logs = true
+
+[vars]
+# https://www.pexels.com/collections/albania-3j1q9fg/
+DEFAULT_COLLECTION_ID = "3j1q9fg"
+PER_PAGE = "80"
+LIST_TTL_SECONDS = "900"      # 15 minutes of caching for the Pexels API list
+IMAGE_CACHE_SECONDS = "3600"  # 1 hour of caching for the proxied image
+
+[[kv_namespaces]]
+binding = "PEXELS_KV"
+id = "25b1847f77ec4e37863c7f792f124669" # TODO: Paste your KV ID here from Cloudflare Dashboard
