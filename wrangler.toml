@@ -1,0 +1,10 @@
+name = "cloudflare-pexels-randomizer"
+main = "src/index.js"
+compatibility_date = "2025-01-21"
+
+# Cloudflare Dashboard'dan bu değişkenleri tanımlayacağız.
+# Local testler için .dev.vars dosyası kullanılır ama repoya atılmaz.
+[vars]
+# Bu değer public olabilir, sorun yok. Ancak API Key gizli kalmalı.
+# Varsayılan bir koleksiyon ID'si bırakabiliriz veya boş bırakabiliriz.
+DEFAULT_COLLECTION_ID = "983745"

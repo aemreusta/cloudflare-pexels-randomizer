@@ -1,0 +1,14 @@
+{
+  "name": "pexels-randomizer-worker",
+  "version": "1.0.0",
+  "description": "A serverless Cloudflare Worker that serves random images from a specific Pexels Collection.",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "author": "Ahmet Emre Usta",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
