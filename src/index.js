@@ -130,17 +130,32 @@ export default {
         return json({ error: "No usable image URL found" }, 502, corsHeaders);
       }
 
-      // 4) 302 Redirect
-      // GitHub'ın sıkı cache yapmasını istemiyoruz
-      const headers = {
-        ...corsHeaders,
-        Location: imageUrl,
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        Pragma: "no-cache",
-        Expires: "0",
-      };
+      // 4) Proxy Fetch (Redirect YERİNE resmi indirip sunuyoruz)
+      // GitHub cache kırmak için bu şart.
+      const imageResp = await fetch(imageUrl);
 
-      return new Response(null, { status: 302, headers });
+      if (!imageResp.ok) {
+        throw new Error(
+          `Failed to fetch image from Pexels: ${imageResp.status}`,
+        );
+      }
+
+      const newHeaders = new Headers(imageResp.headers);
+      // GitHub ve tarayıcılara "Saklama!" emri
+      newHeaders.set(
+        "Cache-Control",
+        "no-cache, no-store, must-revalidate, max-age=0",
+      );
+      newHeaders.set("Pragma", "no-cache");
+      newHeaders.set("Expires", "0");
+      // CORS ekle
+      Object.entries(corsHeaders).forEach(([k, v]) => newHeaders.set(k, v));
+
+      return new Response(imageResp.body, {
+        status: imageResp.status,
+        statusText: imageResp.statusText,
+        headers: newHeaders,
+      });
     } catch (err) {
       console.error(err);
       return json(

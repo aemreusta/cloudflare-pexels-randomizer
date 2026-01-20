@@ -3,12 +3,17 @@
 A serverless Cloudflare Worker that serves random images from a specific Pexels Collection.
 
 <div align="center">
-  <img
-    src="https://cloudflare-pexels-randomizer.a-emreusta061.workers.dev?v=STATIC"
-    width="600"
-    style="border-radius: 20px; box-shadow: 0px 5px 15px rgba(0,0,0,0.5); object-fit: cover; display: block;"
-    alt="My Pexels Collection"
-  />
+  <a href="https://www.pexels.com/@aemreusta/">
+    <img
+      src="https://cloudflare-pexels-randomizer.a-emreusta061.workers.dev"
+      width="100%"
+      height="300"
+      alt="Dynamic Banner via Cloudflare Workers"
+    />
+  </a>
+  <p style="color: #999; font-size: 0.75em; margin-top: 4px;">
+    <a href="https://github.com/aemreusta/cloudflare-pexels-randomizer" style="color: #999; text-decoration: none;">Dynamic Banner architecture powered by Cloudflare Workers</a>
+  </p>
 </div>
 
 ## 🚀 Features
@@ -31,16 +36,16 @@ A serverless Cloudflare Worker that serves random images from a specific Pexels 
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/emre/cloudflare-pexels-randomizer.git
-    cd cloudflare-pexels-randomizer
-    ```
+   ```bash
+   git clone https://github.com/emre/cloudflare-pexels-randomizer.git
+   cd cloudflare-pexels-randomizer
+   ```
 
 2. **Install dependencies:**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ## 🔑 Configuration
 

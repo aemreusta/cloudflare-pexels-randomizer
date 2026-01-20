@@ -53,7 +53,7 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
       - id: check-added-large-files
-        args: [--maxkb=4096]  # 4MB limit for new files
+        args: [--maxkb=4096] # 4MB limit for new files
       - id: check-merge-conflict
 
   - repo: https://github.com/adrienverge/yamllint
